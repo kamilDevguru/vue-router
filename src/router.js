@@ -10,6 +10,7 @@ import Details from '@/view/Details';
 Vue.use(VueRouter);
 
 export default new VueRouter({
+  mode: 'history',
   routes: [
     {
       path: '/',
