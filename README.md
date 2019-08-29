@@ -1,4 +1,6 @@
-# vue-todo
+# vue-router-application
+
+![preview](/images/preview.png)
 
 ## Project setup
 ```
