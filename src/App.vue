@@ -1,28 +1,39 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to Your Vue.js App"/>
+    <Header />
+    <transition name="moveInUp">
+      <router-view />
+    </transition>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue'
+import Header from "@/components/layout/Header";
+import "bootstrap/dist/css/bootstrap.min.css";
 
 export default {
-  name: 'app',
-  components: {
-    HelloWorld
-  }
-}
+  name: "app",
+  components: { Header }
+};
 </script>
 
-<style>
+<style scoped>
+.moveInUp-enter-active,
+.moveInUp-leave-active {
+  animation: moveInUp 0.3s ease-in;
+}
+@keyframes moveInUp {
+  0% {
+    transform: translateY(0);
+  }
+  100% {
+    transform: translateY(-400px);
+  }
+}
+
 #app {
-  font-family: 'Avenir', Helvetica, Arial, sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
-  text-align: center;
-  color: #2c3e50;
-  margin-top: 60px;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
 }
 </style>
